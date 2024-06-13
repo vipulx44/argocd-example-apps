@@ -10,8 +10,15 @@ spec:
     spec:
       containers:
       - name: trigger-tests
-        image: curlimages/curl
-        command:
-          - "curl -d \'{\"message\":\"this is my first webhook\"}' -H \"Content-Type: application/json\" -X POST http://localhost:12000/example"
+        image: curlimages/curl:latest
+        command: ["curl"]
+        args:
+          - "-d"
+          - '{"message":"this is my first webhook"}'
+          - "-H"
+          - "Content-Type: application/json"
+          - "-X"
+          - "POST"
+          - "http://10.244.0.56:12000/example"
       restartPolicy: Never
   backoffLimit: 2
