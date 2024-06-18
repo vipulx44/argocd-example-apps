@@ -19,6 +19,6 @@ spec:
           - "Content-Type: application/json"
           - "-X"
           - "POST"
-          - "http://10.244.0.99:12000/example"
+          - "http://10.244.0.122:12000/example"
       restartPolicy: Never
   backoffLimit: 2
